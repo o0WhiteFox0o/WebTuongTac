@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Rút Quẻ Kinh Dịch</h2>
+
+    <p>Dự đoán Cát - Hung trong ngày </p>
+    <p>Chỉ linh nghiệm trong một lần duy nhất</p>
+
+    <button onclick="document.getElementById('ketqua').innerHTML = myArray(getRndInteger(1,64))">Rút Quẻ</button>
+
+    <div id="ketqua"></div>
+
+    <script>
+
+        function myArray(index) {
+            var queBoi = [
+                "Quẻ 01 <h1>THUẦN CÀN</h1> Là sức mạnh 乾 為 天 Thuộc loại: Quẻ Đại Cát<p>Hôm nay làm gì cũng tốt</p>",
+                "Quẻ 02 <h1>THUẦN KHÔN</h1> Sự tiếp thu 坤 為 地 Thuộc loại: Quẻ Đại Cát<p>Hôm nay tinh thần thoải mái, được người chăm sóc</p>",
+                "Quẻ 03 <h1>THỦY LÔI TRUÂN</h1> Sự gian nan 水 雷 屯 Thuộc loại: Quẻ Hung<p>Hôm nay làm gì cũng gặp khó khăn</p>",
+                "Quẻ 04 <h1>SƠN THỦY MÔNG</h1> Sự mù mờ, mông lung 山 水 蒙 Thuộc loại: Quẻ Hung<p>Đi học gặp quẻ này thĩ không tiếp thu bài được đâu</p>",
+                "Quẻ 05 <h1>THỦY THIÊN NHU</h1> Nhu thuận 水 天 需 Thuộc loại: Quẻ Cát<p>Các quan hệ với mọi người đều tốt đẹp</p>",
+                "Quẻ 06 <h1>THIÊN THỦY TỤNG</h1> Sự tranh tụng, cãi nhau 天 水 訟 Thuộc loại: Quẻ Hung<p>Có thể sẽ gặp cãi vã kiện tụng</p>",
+                "Quẻ 07 <h1>ĐỊA THỦY SƯ</h1> Là quân đội, là thầy 地 水 師 Thuộc loại: Quẻ Cát<p>Gặp người dẫn dắt</p>",
+                "Quẻ 08 <h1>THỦY ĐỊA TỶ</h1> Hợp đoàn 水 地 比 Thuộc loại: Quẻ Cát<p>Gặp các vấn đề về tập thể, hội hợp</p>",
+                "Quẻ 09 <h1>PHONG THIÊN TIỂU SÚC</h1> Ứng vào những việc nhỏ 風 天 小 畜 Thuộc loại: Quẻ Bình Hòa<p>Làm được một số việc nhỏ, có lợi nhỏ</p>",
+                "Quẻ 10 <h1>THIÊN TRẠCH LÝ</h1> Theo đuổi, lý lẽ, pháp luật 天 澤 履 Thuộc loại: Quẻ Cát<p>Chiến thắng trong một cuộc tranh luận</p>",
+                "Quẻ 11 <h1>ĐỊA THIÊN THÁI</h1> Yên bình 地 天 泰 Thuộc loại: Quẻ Cát hanh<p>Hôm nay mọi thứ thật yên bình</p>",
+                "Quẻ 12 <h1>THIÊN ĐỊA BĨ</h1> Trì trệ, bế tắc 天 地 否 Thuộc loại: Quẻ Hung<p>Công việc trì trệ, bế tắc</p>",
+                "Quẻ 13 <h1>THIÊN HỎA ĐỒNG NHÂN</h1> Tình bạn hữu 天 火 同 人 Thuộc loại: Quẻ Cát<p>Có chiến hữu xuất hiện</p>",
+                "Quẻ 14 <h1>HỎA THIÊN ĐẠI HỮU</h1> Một sở hữu lớn 火 天 大 有 Thuộc loại: Quẻ Đại Cát<p>Được sở hữu một cái gì đó to lớn</p>",
+                "Quẻ 15 <h1>ĐỊA SƠN KHIÊM</h1> Khiêm tốn 地 山 謙 Thuộc loại: Quẻ Cát<p>Sự khiêm tốn sẽ giúp tránh nạn tăng phước</p>",
+                "Quẻ 16 <h1>LÔI ĐỊA DỰ</h1> Nhiệt tình, tham dự 雷 地 豫 Thuộc loại: Quẻ Lợi<p></p>",
+                "Quẻ 17 <h1>TRẠCH LÔI TÙY</h1> Tuân phục, tùy cơ ứng biến. 澤 雷 隨 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 18 <h1>SƠN PHONG CỔ</h1> Thối rữa, sự quây quấn, hoại loạn. 山 風 蠱 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 19 <h1>ĐỊA TRẠCH LÂM</h1> Đến gần 地 澤 臨 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 20 <h1>PHONG ĐỊA QUÁN</h1> Thưởng ngoạn, nhìn, xem, quan sát 風 地 觀 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 21 <h1>HỎA LÔI PHỆ HẠP</h1> Sự Cắn, đớp 火 雷 噬 嗑 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 22 <h1>SƠN HỎA BÍ</h1> Lịch sự, vẻ đẹp 山 火 賁 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 23 <h1>SƠN ĐỊA BÁC</h1> Chẻ, tróc, bóc ra, lột ra 山 地 剝 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 24 <h1>ĐỊA LÔI PHỤC</h1> Phục hồi 地 雷 復 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 25 <h1>THIÊN LÔI VÔ VỌNG</h1> Vô tư, không càn quấy. 天 雷 無 妄 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 26 <h1>SƠN THIÊN ĐẠI SÚC</h1> Tích trữ 山 天 大 畜 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 27 <h1>SƠN LÔI DI</h1> Nuôi dưỡng 山 雷 頤 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 28 <h1>TRẠCH PHONG ĐẠI QUÁ</h1> Quá sức. 澤 風 大 過 Thuộc loại: Quẻ Lợi<p></p>",
+                "Quẻ 29 <h1>THUẦN KHẢM</h1> Sự tồi tệ - Nước 坎 為 水 Thuộc loại: Quẻ Bình hòa<p></p>",
+                "Quẻ 30 <h1>THUẦN LY</h1> Gắn bó, lửa 離 為 火 Thuộc loại: Quẻ Hanh<p></p>",
+                "Quẻ 31 <h1>TRẠCH SƠN HÀM</h1> Quyến rũ 澤 山 咸 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 32 <h1>LÔI PHONG HẰNG</h1> Sự lâu dài. 雷 風 恆 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 33 <h1>THIÊN SƠN ĐỘN</h1> Rút lui, đi ở ẩn, trốn. 天 山 遁 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 34 <h1>LÔI THIÊN ĐẠI TRÁNG</h1> Thịnh vượng 雷天大壯 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 35 <h1>HỎA ĐỊA TẤN</h1> Tiến lên 火地晉 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 36 <h1>ĐỊA HỎA MINH DI</h1>  Đen tối 地 火 明 夷 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 37 <h1>PHONG HỎA GIA NHÂN</h1> Gia Đình, thêm người 風 火 家 人 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 38 <h1>HỎA TRẠCH KHUÊ</h1> Đối đầu, sự trái ngược. 火 澤 睽 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 39 <h1>THỦY SƠN KIỂN</h1> Trở ngại 水 山 蹇 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 40 <h1>LÔI THỦY GIẢI</h1> Giải thoát, giải gỡ. 雷 水 解 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 41 <h1>SƠN TRẠCH TỔN</h1> Suy giảm 山 澤 損 Thuộc loại: Quẻ Bình hòa<p></p>",
+                "Quẻ 42 <h1>PHONG LÔI ÍCH</h1> Tăng cường, có lợi 風 雷 益 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 43 <h1>TRẠCH THIÊN QUẢI</h1> Lúng túng, quyết định. 澤  天 夬 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 44 <h1>THIÊN PHONG CẤU</h1> Giao cấu 天 風 姤 Thuộc loại: Quẻ Bình hòa<p></p>",
+                "Quẻ 45 <h1>TRẠCH ĐỊA TỤY</h1> Sum họp 澤 地 萃 Thuộc loại: Quẻ Hanh<p></p>",
+                "Quẻ 46 <h1>ĐỊA PHONG THĂNG</h1> Vươn lên 地 風 升 Thuộc loại: Quẻ cát hanh<p></p>",
+                "Quẻ 47 <h1>TRẠCH THỦY KHỐN</h1> Khốn khổ 澤 水 困 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 48 <h1>THỦY PHONG TỈNH</h1> Giếng nước 水 風 井 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 49 <h1>TRẠCH HỎA CÁCH</h1> Cải cách 澤 火 革   Thuộc loại: Quẻ cát<p></p>",
+                "Quẻ 50 <h1>HỎA PHONG ĐỈNH</h1> Đỉnh, hưng thịnh 火 風 鼎   Thuộc loại: Quẻ Cát hanh<p></p>",
+                "Quẻ 51 <h1>THUẦN CHẤN</h1> Sấm sét 震 為 雷 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 52 <h1>THUẦN CẤN</h1>  Núi, giữ yên 艮 為 山 Thuộc loại: Quẻ Bình hòa<p></p>",
+                "Quẻ 53 <h1>PHONG SƠN TIỆM</h1> Cải cách 風  山 漸 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 54 <h1>LÔI TRẠCH QUY MUỘI</h1> Em gái 雷 澤 歸 妹 Thuộc loại: Quẻ Hung<p></p>",
+                "Quẻ 55 <h1>LÔI HỎA PHONG</h1> Phong phú 雷 火 豐 Thuộc loại: Quẻ Cát hanh<p></p>",
+                "Quẻ 56 <h1>HỎA SƠN LỮ</h1> Lang thang, giang hồ. 火 山 旅 Thuộc loại: Quẻ Bình hòa<p></p>",
+                "Quẻ 57 <h1>THUẦN TỐN</h1> Khiêm tốn. 巽 為 風 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 58 <h1>THUẦN ĐOÀI</h1> Hớn hở, đoài duyệt. 兌 為 澤 Thuộc loại: Quẻ Cát hanh<p></p>",
+                "Quẻ 59 <h1>PHONG THỦY HOÁN</h1> Giải tán, sự thay đổi, hoán chuyển. 風 水 渙 Thuộc loại: Quẻ Hanh<p></p>",
+                "Quẻ 60 <h1>THỦY TRẠCH TIẾT</h1> Giới hạn, điều độ. 水 澤 節 Thuộc loại: Quẻ Cát<p></p>",
+                "Quẻ 61 <h1>PHONG TRẠCH TRUNG PHU</h1> Trung thực, lòng thành tín. 風 澤 中 孚 Thuộc loại: Quẻ Cát hanh<p></p>",
+                "Quẻ 62 <h1>LÔI SƠN TIỂU QUÁ</h1> Việc nhỏ 雷 山 小 過 Thuộc loại: Quẻ Bình Hòa<p></p>",
+                "Quẻ 63 <h1>THỦY HỎA KÝ TẾ</h1> Đã hoàn tất, việc đã xong. 水 火 既 濟 Thuộc loại: Quẻ Cát hanh<p></p>",
+                "Quẻ 64 <h1>HỎA THỦY VỊ TẾ</h1> Việc chưa xong, việc bắt đầu. 火 水 未 濟 Thuộc loại: Quẻ Hung<p></p>",
+            ];
+            return '<br>' + queBoi[index - 1];
+
+        }
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
